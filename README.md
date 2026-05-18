@@ -38,6 +38,56 @@ The application follows a modular AI pipeline:
 4. Prediction & Risk Analysis  
 5. Dashboard Visualization & Alerts
 
+
+```mermaid
+flowchart LR
+
+%% Tire Module
+subgraph T1[Tire Health Model]
+A1[Sensor Readings]
+A2[Scaling & Encoding]
+A3[Feed Forward Neural Network]
+A4[Tire Degradation Score & Recommendations]
+
+A1 --> A2 --> A3 --> A4
+end
+
+%% Fog Module
+subgraph T2[Fog Risk Prediction]
+B1[Sensor Readings]
+B2[Neural Net Classifier]
+B3[Fog Detection]
+B4[Activate Defog System]
+B5[Automatic Turn Off]
+
+B1 --> B2 --> B3 --> B4 --> B5
+end
+
+%% Pothole Module
+subgraph T3[Pothole Detection]
+C1[CNN Training]
+C2[Preprocessing & Normalization]
+C3[Pothole Alert]
+
+C1 --> C2 --> C3
+end
+
+%% Dashboard
+subgraph D1[Unified Streamlit Dashboard]
+D2[Real-Time Analytics]
+D3[Alerts & Visualization]
+end
+
+A4 --> D1
+B5 --> D1
+C3 --> D1
+
+D1 --> Z[DRIVE SURE]
+```
+
+
+
+
 ---
 
 # 📁 Project Structure
