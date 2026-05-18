@@ -61,27 +61,27 @@ Each module operates independently while sharing predictions and alerts through 
 
 ---
 
-# 🔄 Workflow Architecture
-
 ```mermaid
-flowchart LR
+flowchart TD
 
 %% =========================
 %% Tire Health Prediction
 %% =========================
-subgraph T1[Tire Health Prediction]
-A1[Vehicle & Sensor Inputs]
+subgraph T1["🚗 Tire Health Prediction"]
+direction TB
+A1[Sensor Readings]
 A2[Scaling & Feature Encoding]
-A3[Regression Neural Network]
-A4[Tire Wear Prediction & Smart Suggestions]
+A3[Feed Forward Neural Network]
+A4[Tire Wear Score & Smart Suggestions]
 
 A1 --> A2 --> A3 --> A4
 end
 
 %% =========================
-%% Fog Detection System
+%% Fog Detection
 %% =========================
-subgraph T2[Fog Detection System]
+subgraph T2["🌫️ Fog Detection System"]
+direction TB
 B1[Environmental Sensor Inputs]
 B2[Neural Network Classifier]
 B3[Fog Risk Prediction]
@@ -92,9 +92,10 @@ B1 --> B2 --> B3 --> B4 --> B5
 end
 
 %% =========================
-%% Pothole Detection System
+%% Pothole Detection
 %% =========================
-subgraph T3[Real-Time Pothole Detection]
+subgraph T3["🛣️ Real-Time Pothole Detection"]
+direction TB
 C1[Dashcam / Webcam Feed]
 C2[Preprocessing & Normalization]
 C3[CNN-Based Detection]
@@ -106,22 +107,38 @@ end
 %% =========================
 %% Unified Dashboard
 %% =========================
-subgraph D1[Unified Streamlit Dashboard]
+subgraph D1["📊 Unified Streamlit Dashboard"]
+direction TB
 D2[Live Monitoring]
 D3[Alerts & Visualization]
 D4[Driver Recommendations]
 end
 
 %% =========================
-%% Connections
+%% Final Connections
 %% =========================
 A4 --> D1
 B5 --> D1
 C4 --> D1
 
-D1 --> Z[DRIVE SURE]
-```
+D1 --> Z([DRIVE SURE])
 
+%% =========================
+%% Styling
+%% =========================
+
+classDef tire fill:#F7D794,stroke:#333,stroke-width:2px,color:#000;
+classDef fog fill:#C8D6E5,stroke:#333,stroke-width:2px,color:#000;
+classDef pothole fill:#B8E994,stroke:#333,stroke-width:2px,color:#000;
+classDef dash fill:#ECCC68,stroke:#333,stroke-width:2px,color:#000;
+classDef final fill:#0984E3,color:#fff,stroke:#000,stroke-width:2px;
+
+class A1,A2,A3,A4 tire;
+class B1,B2,B3,B4,B5 fog;
+class C1,C2,C3,C4 pothole;
+class D2,D3,D4 dash;
+class Z final;
+```
 # 🌫️ Fog Detection Module
 
 ## Inputs
