@@ -1,96 +1,255 @@
-# 🚘 DriveSure — AI Powered Road Safety Intelligence
+# 🚘 DriveSure — AI-Powered Unified Vehicle Safety & Diagnostics System
 
-DriveSure is an intelligent vehicle safety monitoring platform designed to improve road awareness using real-time AI-driven hazard detection and predictive analytics. The system combines computer vision, machine learning, and interactive visualization to identify dangerous driving conditions before they become critical.
+> **Think Fast. React Smarter. Drive Safer.**
 
-From pothole recognition to fog monitoring and tire condition prediction, DriveSure delivers a unified smart mobility safety solution through an interactive Streamlit dashboard.
+DriveSure is an AI-powered smart vehicle safety and predictive diagnostics platform designed to improve road safety through real-time hazard detection, environmental monitoring, and intelligent vehicle health analysis.
 
----
+The system combines **Computer Vision, Deep Learning, Sensor-Based Intelligence, and Interactive Analytics** into a unified Streamlit dashboard capable of detecting potholes, predicting fogging risk, and monitoring tire degradation in real time.
 
-# ✨ Core Capabilities
-
-## 🌫️ Smart Fog Detection
-Detects low-visibility environmental conditions using trained machine learning models and sensor-based analysis to assist safer driving decisions.
-
-## 🛣️ Real-Time Pothole Recognition
-Uses deep learning and computer vision techniques to identify potholes and damaged road surfaces from live video streams.
-
-## 🛞 Tire Health Prediction
-Predicts tire degradation levels using neural network-based analysis of vehicle and road-condition parameters.
-
-## 📹 Live Video Monitoring
-Supports webcam and live stream integration for continuous road condition analysis using WebRTC.
-
-## 📊 Interactive Analytics Dashboard
-Provides an intuitive Streamlit interface for monitoring predictions, alerts, and visual insights in real time.
-
-## ⚡ Fast Deployment
-Simple project setup with modular architecture for quick experimentation and deployment.
+Built with accessibility and affordability in mind, DriveSure aims to bring advanced intelligent safety systems to everyday vehicles rather than limiting them to premium automotive ecosystems.
 
 ---
 
-# 🏗️ System Architecture
+# 🌟 Key Highlights
 
-The application follows a modular AI pipeline:
+✅ Real-time pothole detection using CNN-based vision models  
+✅ Predictive fog risk analysis with automatic response logic  
+✅ AI-based tire wear and degradation prediction  
+✅ Unified multi-tab Streamlit dashboard  
+✅ Webcam-enabled live road monitoring  
+✅ Smart alerts and driver recommendations  
+✅ Modular and scalable architecture for future automotive integrations  
 
-1. Video/Input Data Acquisition  
-2. Real-Time Frame Processing  
-3. Hazard Detection Models  
-4. Prediction & Risk Analysis  
-5. Dashboard Visualization & Alerts
+---
 
+# 🎯 Problem Statement
+
+Road transportation continues to face major safety challenges due to:
+
+- Poor road infrastructure and potholes
+- Low visibility caused by fog
+- Lack of affordable tire monitoring systems
+- Delayed detection of hazardous driving conditions
+
+Existing intelligent vehicle safety systems are often restricted to high-end vehicles and expensive hardware ecosystems.
+
+DriveSure addresses this gap by providing a **low-cost AI-powered monitoring solution** that can operate using simulated inputs, webcams, and lightweight machine learning pipelines.
+
+---
+
+# 🧠 System Objectives
+
+The primary objective of DriveSure is to:
+
+- Improve road safety using AI-driven hazard detection
+- Predict dangerous environmental conditions before they escalate
+- Assist drivers with real-time alerts and recommendations
+- Enable predictive vehicle maintenance using intelligent analytics
+- Build a scalable and accessible smart mobility framework
+
+---
+
+# 🏗️ Solution Architecture
+
+DriveSure integrates three intelligent subsystems into one centralized dashboard:
+
+- 🌫️ Fog Detection System
+- 🛣️ Pothole Detection System
+- 🛞 Tire Health Prediction System
+
+Each module operates independently while sharing predictions and alerts through a unified analytics interface.
+
+---
+
+# 🔄 Workflow Architecture
 
 ```mermaid
 flowchart LR
 
-%% Tire Module
-subgraph T1[Tire Health Model]
-A1[Sensor Readings]
-A2[Scaling & Encoding]
-A3[Feed Forward Neural Network]
-A4[Tire Degradation Score & Recommendations]
+%% =========================
+%% Tire Health Prediction
+%% =========================
+subgraph T1[Tire Health Prediction]
+A1[Vehicle & Sensor Inputs]
+A2[Scaling & Feature Encoding]
+A3[Regression Neural Network]
+A4[Tire Wear Prediction & Smart Suggestions]
 
 A1 --> A2 --> A3 --> A4
 end
 
-%% Fog Module
-subgraph T2[Fog Risk Prediction]
-B1[Sensor Readings]
-B2[Neural Net Classifier]
-B3[Fog Detection]
-B4[Activate Defog System]
-B5[Automatic Turn Off]
+%% =========================
+%% Fog Detection System
+%% =========================
+subgraph T2[Fog Detection System]
+B1[Environmental Sensor Inputs]
+B2[Neural Network Classifier]
+B3[Fog Risk Prediction]
+B4[Automatic Defog Activation]
+B5[Automatic Shutoff Logic]
 
 B1 --> B2 --> B3 --> B4 --> B5
 end
 
-%% Pothole Module
-subgraph T3[Pothole Detection]
-C1[CNN Training]
+%% =========================
+%% Pothole Detection System
+%% =========================
+subgraph T3[Real-Time Pothole Detection]
+C1[Dashcam / Webcam Feed]
 C2[Preprocessing & Normalization]
-C3[Pothole Alert]
+C3[CNN-Based Detection]
+C4[Pothole Alert Generation]
 
-C1 --> C2 --> C3
+C1 --> C2 --> C3 --> C4
 end
 
-%% Dashboard
+%% =========================
+%% Unified Dashboard
+%% =========================
 subgraph D1[Unified Streamlit Dashboard]
-D2[Real-Time Analytics]
+D2[Live Monitoring]
 D3[Alerts & Visualization]
+D4[Driver Recommendations]
 end
 
+%% =========================
+%% Connections
+%% =========================
 A4 --> D1
 B5 --> D1
-C3 --> D1
+C4 --> D1
 
 D1 --> Z[DRIVE SURE]
 ```
 
+# 🌫️ Fog Detection Module
 
+## Inputs
+- Inside Temperature
+- Outside Temperature
+- Relative Humidity
+- Dew Point
+- Air Recirculation Status
 
+## Model
+A neural network trained on environmental sensor conditions predicts cabin fogging probability.
+
+## Smart Response System
+
+When fog is detected:
+
+- Warm-air defogger activates automatically
+- AC system is triggered simultaneously
+- Twin-actuation logic ensures redundancy and reliability
+
+## Output
+- Fog risk classification
+- Automatic defogging response
+- Real-time dashboard alerts
+
+## Innovation
+DriveSure introduces a predictive and automatic fog response mechanism suitable even for low-cost vehicles.
 
 ---
 
-# 📁 Project Structure
+# 🛣️ Pothole Detection Module
+
+## Inputs
+- Live webcam/dashcam feed
+- Uploaded road images
+
+## Model
+CNN-based image classification model trained on pothole and normal road datasets.
+
+## Features
+- Real-time pothole recognition
+- Live alert generation
+- Webcam integration using WebRTC
+- UI-based confidence visualization
+
+## Future Scope
+- Geo-tagging and automated authority notifications for damaged roads
+
+---
+
+# 🛞 Tire Health Prediction Module
+
+## Inputs
+
+The model processes multiple vehicle and environmental parameters including:
+
+- Speed
+- Brake Pressure
+- Steering Position
+- Ambient Temperature
+- Humidity
+- Tire Temperature
+- Tread Depth
+- Friction Coefficient
+- Driving Style Metrics
+
+## Model
+A regression-based neural network predicts tire degradation levels using encoded sensor inputs.
+
+## Output
+- Tire wear prediction
+- Maintenance recommendations
+- Driving behavior insights
+- Tire replacement suggestions
+
+## Innovation
+Unlike traditional TPMS systems, DriveSure predicts tire degradation using behavioral and environmental analysis, making it feasible for legacy and affordable vehicles.
+
+---
+
+# 📊 Unified Dashboard Experience
+
+The Streamlit-based dashboard provides:
+
+- Real-time monitoring
+- Live pothole detection
+- Tire health analytics
+- Fog condition alerts
+- Smart recommendations
+- Multi-tab interactive visualization
+
+## Unique Value
+DriveSure combines multiple intelligent automotive safety modules into a single lightweight platform.
+
+---
+
+# 📈 Results & Performance
+
+| Module | Performance |
+|---|---|
+| Fog Detection Accuracy | 92% |
+| Pothole Detection Accuracy | 88.63% |
+| Best Validation Accuracy | 90% |
+| Tire Prediction MSE | 0.0296 |
+| Tire Prediction MAE | 0.0835 |
+
+## Impact
+- Potential reduction in fog-related accidents
+- Improved predictive maintenance awareness
+- Enhanced road hazard monitoring
+
+---
+
+# 🧪 Technical Stack
+
+| Technology | Usage |
+|---|---|
+| Python | Core Development |
+| TensorFlow / Keras | Deep Learning Models |
+| scikit-learn | ML Utilities |
+| OpenCV | Computer Vision |
+| Streamlit | Interactive Dashboard |
+| streamlit-webrtc | Webcam Streaming |
+| NumPy & Pandas | Data Processing |
+
+---
+
+# 📂 Project Structure
 
 ```text
 DriveSure/
@@ -112,9 +271,9 @@ DriveSure/
 
 ---
 
-# ⚙️ Installation Guide
+# ⚙️ Installation & Setup
 
-## 1️⃣ Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/32732Nikitha/Tata-Innovation-26_DriveSure.git
@@ -123,7 +282,7 @@ cd Tata-Innovation-26_DriveSure
 
 ---
 
-## 2️⃣ Create Virtual Environment
+## Create Virtual Environment
 
 ### Linux / macOS
 
@@ -141,7 +300,7 @@ venv\Scripts\activate
 
 ---
 
-## 3️⃣ Install Dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -149,91 +308,56 @@ pip install -r requirements.txt
 
 ---
 
-# 🤖 Required Models
-
-Place all trained models inside the `models/` directory.
-
-### Included Models
-
-- `fog_detection_model.pkl`
-- `fog_scaler.pkl`
-- `pothole_model.h5`
-- `tire_degradation_nn_model.h5`
-- `scaler-2.pkl`
-
----
-
 # ▶️ Running the Application
-
-Launch the Streamlit dashboard:
 
 ```bash
 streamlit run dashboard.py
 ```
 
-After startup, the application opens in your browser automatically.
-
----
-
-# 📈 Features Available in Dashboard
-
-- Live pothole monitoring
-- Fog condition alerts
-- Tire wear prediction
-- Real-time analytics visualization
-- Webcam stream integration
-- Interactive UI components
-
----
-
-# 🧠 Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| Python | Core Development |
-| Streamlit | Dashboard Interface |
-| TensorFlow | Deep Learning Models |
-| scikit-learn | ML Utilities |
-| OpenCV | Image & Video Processing |
-| streamlit-webrtc | Live Webcam Streaming |
-| NumPy & Pandas | Data Processing |
-
----
-
-# 👨‍💻 Contributors
-
-- Dorbala Sai Nikitha
-- Dorbala Sai Sujitha
-- Chennupalli Laxmi Varshitha
-- Chittelu Nissy
+The dashboard launches locally in your browser.
 
 ---
 
 # 🚀 Future Enhancements
 
-- GPS-based hazard mapping
-- Driver drowsiness detection
-- Lane departure monitoring
-- Cloud-based analytics
-- Mobile application integration
-- Emergency alert system
+- GPS-based pothole geo-tagging
+- Cloud-based analytics integration
+- OBD-II and CAN bus integration
+- Driver drowsiness monitoring
+- Tire sensor emulation systems
+- Mobile application deployment
 
 ---
 
-# 📬 Support & Contributions
+# ⚠️ Challenges Faced
 
-Contributions, improvements, and suggestions are welcome.
+- Limited Indian road-condition datasets
+- Integration of heterogeneous AI modules
+- Real-time Streamlit video latency optimization
+- Simulated validation without hardware sensors
 
-If you discover issues or want to enhance the platform:
+---
 
-- Create an issue
-- Submit a pull request
-- Share feature ideas
+# 👨‍💻 Team — Neo Karma
+
+## Creators of DriveSure
+
+- [Dorbala Sai Nikitha — CSE (IRD)](https://github.com/32732Nikitha)
+- [Dorbala Sai Sujitha — CSE (IRD)](https://github.com/2300030861)
+- [Chennupalli Laxmi Varshitha — CS&IT (IRD)](https://github.com/LaxmiVarshithaCH)
+- [Chittelu Nissy — CSE (IRD)](https://github.com/2300030144)
+
+---
+
+# 🏫 Presented By
+
+**Koneru Lakshmaiah Education Foundation**  
+Andhra Pradesh, India
 
 ---
 
 # 🌍 Vision
 
-DriveSure aims to make transportation safer through intelligent automation, predictive road analysis, and accessible AI-powered monitoring systems.
+DriveSure envisions a future where intelligent road safety systems are accessible, scalable, and affordable for every vehicle owner.
 
-### Smarter Detection. Safer Roads. Better Journeys.
+## Smarter Detection. Safer Roads. Better Journeys.
